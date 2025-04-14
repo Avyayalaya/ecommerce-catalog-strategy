@@ -85,24 +85,30 @@ similarity_score = w1 * brand_similarity +
                    w5 * conversion_ratio_similarity
 ```
 
+#### Predictive Edge Modeling:
+To strengthen substitute recommendations:
+- Train ML models (e.g., **XGBoost**) on product pair features:
+  - Brand similarity, price difference, co-session frequency
+  - Metadata alignment and conversion funnel similarity
+- Output: High-confidence substitutes prioritized on SERP
+
 ### ✅ Example
 - User searches: `wireless keyboard`
 - Seen product: Logitech K230 Wireless Keyboard
 - Alternatives shown:
-  - Dell KM117 Wireless Keyboard
+  - Dell KM117 Wireless Keyboard (predicted substitute via XGBoost)
   - HP CS10 Combo
-- Ranked by similarity + engagement + conversion likelihood
 
 ### B. Graph-Integrated Recommendations
 
-Plug similarity scores into the **product graph**:
+Plug similarity scores and ML-predicted substitutes into the **product graph**:
 - Use edges to recommend variants, substitutes
 - Dynamically update edge weights based on real-time user signals
 
 ### ✅ Example
 - Node A: Apple iPad Air 5th Gen
 - Node B: Samsung Galaxy Tab S8
-- Edge Type: Substitute (within same segment, similar use-case)
+- Edge Type: Substitute (ML-predicted and reinforced by user co-view)
 
 ### C. Learning from Outcomes
 
@@ -145,7 +151,7 @@ Plug similarity scores into the **product graph**:
 
 A powerful feedback-driven loop between **Search**, **Recommendations**, and **Catalog** that:
 - Closes high-signal gaps
-- Surfaces meaningful alternatives
+- Surfaces meaningful alternatives (driven by predictive models)
 - Keeps users engaged and discovering
 
 > “Search is not a box. It’s a dialogue. Recos aren’t decoration. They’re decision support.”
