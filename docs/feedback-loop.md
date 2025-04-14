@@ -21,10 +21,18 @@ Feedback is the critical flywheel that powers **catalog precision**, **system ev
 - **QA Panel**: Batch review from flagged SKUs (auto-triggered or manual)
 - **Feedback Inbox**: Route SLT and business reports via tagging into issue queues
 
-### Example: Retail Flow
-1. Retailer sees system match for `“Amul Dark Chocolate 150g”`
-2. Flags spec as incorrect (sugar-free variant mismatch)
-3. Adds note → Feeds into matching engine retraining + metadata fix
+### ✅ Example: Retail Flow
+- Query: `Amul Dark Chocolate 150g`
+- Retail team sees variant mapped to a sugar-free version
+- Flags: "Incorrect spec"
+- Adds note: "This is not sugar-free; packaging variant confusion"
+- System updates matching logic → reduces spec weight for similar products
+
+### ✅ Example: User Behavior
+- User searches: `Herbal shampoo for dandruff`
+- Clicks on top result → bounces in <3 seconds
+- Add-to-cart rate: 0%
+- System flags query-product pair as low engagement → reviews alternate matches or metadata issues
 
 ---
 
@@ -51,12 +59,14 @@ Build a light orchestration system that:
 - Assigns feedback to relevant systems: matching, search, metadata, reco
 - Tracks resolution rate and latency (how fast issues are acted upon)
 
-### Example Signal Map:
+### ✅ Example Signal Map:
 ```
 if feedback.type == 'spec error' and source == 'retail':
     → route to metadata_engine
 if feedback.type == 'match false positive':
     → retrain matcher on updated sample
+if feedback.type == 'query result bounce':
+    → log query-product pair as low-confidence
 ```
 
 ---
@@ -69,6 +79,11 @@ if feedback.type == 'match false positive':
 | Resolution Time (avg/p95)    | Efficiency of issue triage and fix loop                     |
 | Top Feedback Types           | Which parts of the system break most often                  |
 | System Improvement Metrics   | % reduction in false matches, failed searches, bad recos    |
+
+### ✅ Example Metrics:
+- Avg resolution time: 2.4 days
+- Feedback volume: 1200/week
+- Top issues: Incorrect specs (40%), Reco irrelevance (25%), Match misses (15%)
 
 ---
 
