@@ -127,5 +127,3 @@ An adaptive metadata layer that:
 - Enables intelligent filtering and recos
 - Evolves with feedback
 - Maintains high integrity even at scale
-
-> “Metadata isn’t decoration—it’s the scaffolding of every smart system built on top of a catalog.”
