@@ -6,6 +6,19 @@ Selection remains fundamental to winning in any e-commerce market—alongside pr
 2. **Knowing and surfacing what the customer wants**
 
 ---
+## Strategic Foundations
+
+### 1. What Winning Means
+- **Coverage**: Close to 100% coverage of demand across categories
+- **Discovery**: High success rate in user finding what they need in <2 interactions
+- **Conversion**: Users choosing surfaced items at high rates (win ratio > 30%)
+- **Scalability**: Programmatic growth that doesn’t scale with headcount
+
+### 2. Core Principles
+- Treat the catalog as a **live decision system**, not a static warehouse
+- Use **graph-based intelligence** to surface relationships, gaps, and actions
+- Design **feedback into every layer**—from user queries to manual overrides
+
 
 ## 🔗 Key Problems in the Selection Value Chain
 
