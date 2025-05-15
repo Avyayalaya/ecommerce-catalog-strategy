@@ -101,5 +101,3 @@ if feedback.type == 'query result bounce':
 ## ✅ Outcome
 
 Feedback turns catalog systems from static pipelines into **adaptive organisms**. Every correction, if used well, is an investment in future accuracy.
-
-> “If you listen well, your systems learn to speak back with precision.”
