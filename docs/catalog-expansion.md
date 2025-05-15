@@ -126,5 +126,3 @@ This team must operate like a product team with iteration, feedback cycles, and 
 ## ✅ Outcome
 
 A scalable, intelligent pipeline for tail acquisition—driven by data, refined by feedback, and built for scale.
-
-> “Don’t just chase the long tail. Build the engine that absorbs it.”
